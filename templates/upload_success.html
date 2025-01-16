@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Success</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #6eccff, #baffef, #b7ffb7, #bdffc685);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            text-align: center;
+            color: #005f9e;
+        }
+        h2 {
+            color: #007f4f;
+            margin-top: 30px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            padding: 5px 0;
+            border-bottom: 1px solid #ddd;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        li:hover {
+            background-color: #d8f3d1; /* Light green */
+            transition: all 0.3s ease-in-out;
+        }
+        img {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #ccc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        p {
+            text-align: center;
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <h1>Graph of Survey Results</h1>
+    <img src="data:image/png;base64,{{ chart_img }}" alt="Survey Results Chart">
+    
+    <h2>Questions and Their Numbers</h2>
+    <ul>
+        {% for number, question in question_texts.items() %}
+            <li>{{ number }} - {{ question }}</li>
+        {% endfor %}
+    </ul>
+
+    <p>Note: The x-axis represents the question numbers. For detailed question text, refer to the list above.</p>
+</body>
+</html>

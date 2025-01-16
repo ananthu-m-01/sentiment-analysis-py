@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Visualization</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: linear-gradient(to right, #e3e8eb, #ffffff);
+ /* Light grey background */
+            /* Optional: Add a gradient background */
+            /* background: linear-gradient(to bottom, #e0e0e0, #ffffff); */
+        }
+        .chart-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            animation: fadeIn 1.5s ease-in-out;
+            background: linear-gradient(to right, #6eccff, #baffef,#b7ffb7,#bdffc685);
+ /* Slight transparency for better contrast */
+            padding: 20px;
+            border-radius: 12px;
+        }
+        .chart {
+            width: 30%; /* Width of each chart */
+            box-sizing: border-box;
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 15px; /* Padding for chart container */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .chart:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        canvas {
+            width: 100% !important;
+            height: 250px !important; /* Reduced height */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: #333; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);">Survey Data Visualization</h1>
+    <div class="chart-container">
+        {% if analysis_data %}
+            {% for question in analysis_data %}
+                <div class="chart">
+                    <h3>{{ question.question_text }}</h3>
+                    <canvas id="chart-{{ question.question_id }}"></canvas>
+                    <script>
+                        var ctx = document.getElementById('chart-{{ question.question_id }}').getContext('2d');
+                        new Chart(ctx, {
+                            type: 'bar',
+                            data: {
+                                labels: ['Yes', 'No', 'Neutral'],
+                                datasets: [{
+                                    label: 'Responses',
+                                    data: [{{ question.yes_count }}, {{ question.no_count }}, {{ question.neutral_count }}],
+                                    backgroundColor: ['#28a745', '#dc3545', '#6c757d'],
+                                    borderColor: ['#1e7e34', '#c82333', '#5a6268'],
+                                    borderWidth: 1,
+                                    borderRadius: 5,
+                                    hoverOffset: 10
+                                }]
+                            },
+                            options: {
+                                responsive: true,
+                                animation: {
+                                    duration: 1000,
+                                    easing: 'easeInOutQuad'
+                                },
+                                scales: {
+                                    y: {
+                                        beginAtZero: true,
+                                        grid: {
+                                            display: true,
+                                            color: '#ddd', // Color of the grid lines
+                                            lineWidth: 1, // Line width of the grid lines
+                                        },
+                                        ticks: {
+                                            stepSize: 1,
+                                            font: {
+                                                weight: 'bold'
+                                            }
+                                        }
+                                    },
+                                    x: {
+                                        grid: {
+                                            display: true,
+                                            color: '#ddd', // Color of the grid lines
+                                            lineWidth: 1, // Line width of the grid lines
+                                        },
+                                        ticks: {
+                                            font: {
+                                                weight: 'bold'
+                                            }
+                                        }
+                                    }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
+                                    tooltip: {
+                                        callbacks: {
+                                            label: function(tooltipItem) {
+                                                return tooltipItem.label + ': ' + tooltipItem.raw;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        });
+                    </script>
+                </div>
+                {% if loop.index % 2 == 0 %}
+                    <div style="flex-basis: 100%; height: 0;"></div> <!-- Line break for layout -->
+                {% endif %}
+            {% endfor %}
+        {% else %}
+            <p>No data available for visualization.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

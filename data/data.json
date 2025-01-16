@@ -1,0 +1,205 @@
+{
+  "survey_title": "Public Sentiment on Technology Adoption",
+  "questions": [
+    {
+      "question": "Do you think AI positively impacts daily life?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you concerned about the privacy of your smart devices?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you believe self-driving cars are safe?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Would you use automation tools in your workplace?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you think virtual reality has a significant future in education?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you believe AI will replace human jobs in the next decade?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you comfortable using voice assistants (e.g., Alexa, Siri)?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you think wearable tech improves your health monitoring?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you worried about deepfake technology spreading misinformation?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you trust online recommendation algorithms for purchases?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you comfortable using biometric authentication for security?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you believe 5G networks will revolutionize connectivity?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Would you use telemedicine services for healthcare?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you satisfied with the current state of online data protection?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you find AR/VR entertainment more engaging than traditional media?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you optimistic about the future of space exploration technology?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Would you rely on a fully automated customer service system?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you think cryptocurrency is a reliable form of investment?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you comfortable using digital payment platforms for all transactions?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you believe drones should be used for delivery services?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you think social media algorithms promote unhealthy content?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you open to using online education platforms for skill development?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Would you use smart home devices to enhance daily convenience?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Do you believe robotics will improve the quality of elderly care?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    },
+    {
+      "question": "Are you optimistic about the environmental benefits of green technology?",
+      "options": {
+        "option1": "Yes",
+        "option2": "Neutral",
+        "option3": "No"
+      }
+    }
+  ]
+}

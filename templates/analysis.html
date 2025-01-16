@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Analysis</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6eccff, #baffef, #b7ffb7, #bdffc685);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        li:hover {
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        li strong {
+            display: block;
+            font-size: 1.2em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin: 8px 0;
+            font-size: 1em;
+        }
+
+        p span {
+            font-weight: bold;
+        }
+
+        p span.yes {
+            color: #28a745; /* Green */
+        }
+
+        p span.no {
+            color: #dc3545; /* Red */
+        }
+
+        p span.neutral {
+            color: #ffc107; /* Yellow */
+        }
+
+        .no-data {
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-top: 30px;
+        }
+
+        .download-button {
+            display: block;
+            width: 220px;
+            margin: 40px auto 0;
+            padding: 12px 24px;
+            font-size: 1.1em;
+            color: #ffffff;
+            background-color: #007bff; /* Blue */
+            border: none;
+            border-radius: 8px;
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+            transition: background-color 0.3s ease-in-out, transform 0.2s;
+        }
+
+        .download-button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <h1>Survey Analysis</h1>
+    {% if analysis_data %}
+        <ul>
+            {% for question in analysis_data %}
+                <li>
+                    <strong>{{ question.question_text }}</strong>
+                    <p>Yes: <span class="yes">{{ question.yes_count }}</span> | No: <span class="no">{{ question.no_count }}</span> | Neutral: <span class="neutral">{{ question.neutral_count }}</span></p>
+                </li>
+            {% endfor %}
+        </ul>
+        <a href="/export-to-excel" class="download-button">Download Data</a>
+    {% else %}
+        <p class="no-data">No data available for analysis.</p>
+    {% endif %}
+</body>
+</html>

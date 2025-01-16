@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Home Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6eccff, #baffef, #b7ffb7, #bdffc685);
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff; /* White card background */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .card {
+            color: #007bff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+            border-color: #006fe6;
+        }
+
+        .card p {
+            margin: 10px 0;
+            font-size: 1.2rem;
+        }
+
+        a {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-size: 1rem;
+            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            text-transform: uppercase;
+            font-weight: bold;
+            box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+            transition: background-color 0.3s, transform 0.2s;
+            text-align: center;
+            width: 200px; /* Set a consistent width */
+            display: block;
+            margin: 10px auto; /* Center the anchor tags */
+        }
+
+        a:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        a:focus {
+            outline: none;
+        }
+
+        @media (max-width: 768px) {
+            a {
+                width: 90%; /* Full width on smaller screens */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Technology Adoption</h1>
+        
+        <!-- Card for total submissions -->
+        <div class="card">
+            <p>Total Submissions</p>
+            <p>100+</p>
+        </div>
+
+        <a href="{{ url_for('analysis') }}">Responses</a>
+        <a href="{{ url_for('visualization') }}">Visualization</a>
+        <a href="{{ url_for('upload') }}">Upload</a>
+    </div>
+</body>
+</html>

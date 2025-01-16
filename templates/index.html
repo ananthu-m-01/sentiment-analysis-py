@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Survey Display</title>
+  <script src="{{ url_for('static', filename='script/script.js') }}" defer></script>
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 20px;
+      background: linear-gradient(to right, #6eccff, #baffef, #b7ffb7, #bdffc685);
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    #survey-container {
+      background: linear-gradient(to right, #6eccff,);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+      width: 100%;
+      max-width: 800px;
+      margin-bottom: 20px;
+    }
+
+    .survey-title {
+      font-size: 36px;
+      font-weight: 700;
+      color: #191f25;
+      text-align: center;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .question {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 15px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .question:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+    }
+
+    .question-title {
+      font-size: 24px;
+      font-weight: 600;
+      color: #2c3e50;
+      margin-bottom: 10px;
+    }
+
+    .options {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .options li {
+      margin: 12px 0;
+      font-size: 18px;
+      position: relative;
+      padding-left: 35px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .options li::before {
+      content: "•";
+      font-size: 20px;
+      color: #4CAF50;
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .options li:hover {
+      color: #28a745; /* Green */
+      transform: translateX(8px);
+    }
+
+    .submit-btn {
+      padding: 15px 30px;
+      font-size: 20px;
+      font-weight: bold;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      box-shadow: 0 3px 6px rgba(0, 123, 255, 0.3);
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 123, 255, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div id="survey-container">
+    <div class="survey-title">Survey Title</div>
+    <!-- Survey will be dynamically loaded here -->
+    <div class="question">
+      <div class="question-title">Sample Question 1</div>
+      <ul class="options">
+        <li>Option A</li>
+        <li>Option B</li>
+        <li>Option C</li>
+      </ul>
+    </div>
+    <div class="question">
+      <div class="question-title">Sample Question 2</div>
+      <ul class="options">
+        <li>Option X</li>
+        <li>Option Y</li>
+        <li>Option Z</li>
+      </ul>
+    </div>
+  </div>
+  <button class="submit-btn" onclick="submitSurvey()">Submit</button>
+</body>
+</html>
